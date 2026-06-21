@@ -1,1155 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lathasri Ravirala — AI Engineer &amp; Data Scientist</title>
-<meta name="description" content="Lathasri Ravirala is an AI engineer and data scientist building retrieval-augmented systems, computer-vision pipelines, and decision-ready analytics. Based in Hyderabad, India." />
-<meta name="author" content="Lathasri Ravirala" />
-<meta name="theme-color" content="#07080d" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lathasri Ravirala | AI Engineer Building Decision Systems</title>
+  <meta name="description" content="AI engineer and data scientist building grounded LLM systems, computer-vision models, data pipelines, and decision-ready analytics." />
+  <meta name="author" content="Lathasri Ravirala" />
+  <meta name="theme-color" content="#07090f" />
 
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Lathasri Ravirala — AI Engineer & Data Scientist" />
-<meta property="og:description" content="Retrieval-augmented systems, computer vision, and decision-ready analytics — engineered to ship, not just demo." />
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/165140495?v=4" />
-<meta name="twitter:card" content="summary" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Lathasri Ravirala | AI Engineer &amp; Data Scientist" />
+  <meta property="og:description" content="Production-minded AI, analytics, and data systems—built to turn complex data into clear decisions." />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/165140495?v=4" />
+  <meta property="og:image:alt" content="Portrait of Lathasri Ravirala" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
-<style>
-  /* ============ TOKENS ============ */
-  :root{
-    color-scheme: dark;
-    --void:#07080d;
-    --abyss:#0b0e18;
-    --panel:#10142220;
-    --panel-rgb:16,20,34;
-    --line: rgba(255,255,255,0.09);
-    --line-strong: rgba(255,255,255,0.16);
-    --ink:#f3f5fa;
-    --ink-dim:#a6aec3;
-    --ink-faint:#6c7488;
-    --violet:#8b7cf6;
-    --violet-bright:#b7a9ff;
-    --blue:#3da9fc;
-    --blue-bright:#7cc6ff;
-    --grad: linear-gradient(120deg, var(--violet), var(--blue));
-    --grad-btn: linear-gradient(120deg, #6e54e8, #1f7fe0);
-    --r-sm:10px; --r-md:16px; --r-lg:22px; --r-xl:28px; --r-pill:999px;
-    --container: 1180px;
-    --shadow-soft: 0 30px 80px -30px rgba(0,0,0,0.6);
-    --ff-display:'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-    --ff-body:'Inter', ui-sans-serif, system-ui, sans-serif;
-    --ff-mono:'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
-  }
-  *,*::before,*::after{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
-  body{
-    margin:0;
-    background:
-      radial-gradient(820px 520px at 88% -6%, rgba(139,124,246,0.16), transparent 60%),
-      radial-gradient(700px 460px at -4% 14%, rgba(61,169,252,0.10), transparent 60%),
-      var(--void);
-    color:var(--ink);
-    font-family:var(--ff-body);
-    font-size:16px;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  img{ max-width:100%; display:block; }
-  a{ color:inherit; text-decoration:none; }
-  button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer; }
-  ul{ margin:0; padding:0; list-style:none; }
-  p{ margin:0; }
-  h1,h2,h3,h4{ margin:0; font-family:var(--ff-display); font-weight:600; letter-spacing:-0.02em; color:var(--ink); }
-  svg{ display:block; }
-
-  :focus-visible{ outline:2px solid var(--blue-bright); outline-offset:3px; border-radius:4px; }
-
-  .skip-link{
-    position:absolute; left:12px; top:-60px; z-index:200;
-    background:var(--ink); color:var(--void); padding:10px 16px; border-radius:var(--r-sm);
-    font-family:var(--ff-mono); font-size:0.85rem; transition:top 0.2s ease;
-  }
-  .skip-link:focus{ top:12px; }
-
-  .wrap{ width:min(var(--container), 100% - 40px); margin-inline:auto; }
-
-  /* ============ NAV ============ */
-  .nav{
-    position:fixed; top:14px; left:50%; transform:translateX(-50%);
-    width:min(var(--container), 100% - 24px);
-    z-index:100;
-    background:rgba(8,10,18,0.6);
-    backdrop-filter:blur(18px) saturate(140%);
-    -webkit-backdrop-filter:blur(18px) saturate(140%);
-    border:1px solid var(--line);
-    border-radius:var(--r-lg);
-    padding:10px 14px;
-  }
-  .nav__inner{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
-  .nav__brand{ display:flex; align-items:center; gap:10px; font-family:var(--ff-display); font-weight:600; font-size:0.95rem; }
-  .nav__mark{
-    width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
-    background:var(--grad); color:#08080e; font-family:var(--ff-mono); font-weight:600; font-size:0.78rem;
-    flex:none;
-  }
-  .nav__name{ white-space:nowrap; }
-  .nav__links{ display:flex; align-items:center; gap:2px; }
-  .nav__links a{
-    padding:9px 13px; border-radius:var(--r-pill); color:var(--ink-dim);
-    font-size:0.9rem; transition:color 0.2s ease, background 0.2s ease;
-  }
-  .nav__links a:hover{ color:var(--ink); background:rgba(255,255,255,0.05); }
-  .nav__links a.is-active{ color:var(--ink); background:rgba(255,255,255,0.07); }
-  .nav__cta{ display:flex; align-items:center; gap:10px; }
-  .nav__toggle{ display:none; padding:8px; border-radius:var(--r-sm); }
-  .nav__toggle:hover{ background:rgba(255,255,255,0.06); }
-
-  .nav__mobile{
-    display:none; flex-direction:column; gap:2px; padding-top:10px; margin-top:10px;
-    border-top:1px solid var(--line);
-  }
-  .nav__mobile a{ padding:11px 8px; border-radius:var(--r-sm); color:var(--ink-dim); font-size:0.96rem; }
-  .nav__mobile a:hover{ background:rgba(255,255,255,0.05); color:var(--ink); }
-  .nav.is-open .nav__mobile{ display:flex; }
-
-  /* ============ BUTTONS ============ */
-  .btn{
-    display:inline-flex; align-items:center; gap:8px; padding:13px 22px;
-    border-radius:var(--r-sm); font-weight:600; font-size:0.95rem;
-    transition:transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
-    white-space:nowrap;
-  }
-  .btn--primary{ background:var(--grad-btn); color:#fff; box-shadow:0 14px 34px -14px rgba(110,84,232,0.65); }
-  .btn--primary:hover{ transform:translateY(-2px); box-shadow:0 18px 42px -14px rgba(110,84,232,0.8); }
-  .btn--ghost{ background:rgba(255,255,255,0.03); border:1px solid var(--line-strong); color:var(--ink); }
-  .btn--ghost:hover{ transform:translateY(-2px); border-color:rgba(139,124,246,0.5); background:rgba(255,255,255,0.06); }
-  .btn--sm{ padding:10px 16px; font-size:0.86rem; border-radius:var(--r-sm); }
-  .btn svg{ width:16px; height:16px; flex:none; }
-
-  /* ============ HERO ============ */
-  .hero{
-    padding:148px 0 90px;
-    position:relative;
-  }
-  .hero__inner{
-    display:grid; grid-template-columns:1fr; gap:56px; align-items:center;
-  }
-  .status-pill{
-    display:inline-flex; align-items:center; gap:9px; padding:8px 14px;
-    border-radius:var(--r-pill); border:1px solid var(--line-strong);
-    background:rgba(255,255,255,0.03); font-family:var(--ff-mono); font-size:0.78rem;
-    color:var(--ink-dim); letter-spacing:0.02em; width:fit-content;
-  }
-  .status-dot{ width:7px; height:7px; border-radius:50%; background:#5eead4; box-shadow:0 0 0 4px rgba(94,234,212,0.18); flex:none; }
-  .hero__role{
-    font-family:var(--ff-mono); font-size:0.88rem; letter-spacing:0.06em;
-    color:var(--violet-bright); margin-top:18px;
-  }
-  .hero__title{
-    font-size:clamp(2.6rem, 7vw, 4.6rem); line-height:1.02; margin-top:10px;
-  }
-  .hero__lede{
-    margin-top:20px; max-width:560px; color:var(--ink-dim); font-size:1.08rem; line-height:1.7;
-  }
-  .hero__actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
-  .hero__social{ display:flex; flex-wrap:wrap; gap:22px; margin-top:30px; }
-  .hero__social a{
-    display:inline-flex; align-items:center; gap:8px; color:var(--ink-dim); font-size:0.92rem;
-    transition:color 0.2s ease;
-  }
-  .hero__social a:hover{ color:var(--ink); }
-  .hero__social svg{ width:17px; height:17px; }
-
-  .hero__visual{ position:relative; }
-  .hero__panel{
-    position:relative; border-radius:var(--r-xl); border:1px solid var(--line);
-    background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-    backdrop-filter:blur(14px);
-    padding:18px; overflow:visible;
-    box-shadow:var(--shadow-soft);
-  }
-  .hero__panel::before{
-    content:""; position:absolute; inset:-40px; z-index:-1; filter:blur(60px);
-    background:radial-gradient(220px 220px at 25% 20%, rgba(139,124,246,0.30), transparent 70%),
-               radial-gradient(220px 220px at 80% 80%, rgba(61,169,252,0.24), transparent 70%);
-  }
-  .hero__graph{ width:100%; height:auto; }
-  .flow-line{ fill:none; stroke-width:1.6; stroke-linecap:round; stroke-dasharray:5 9; }
-  .flow-line--v{ stroke:rgba(139,124,246,0.55); animation:flow 2.6s linear infinite; }
-  .flow-line--b{ stroke:rgba(61,169,252,0.55); animation:flow 2.6s linear infinite; animation-delay:-1.1s; }
-  @keyframes flow{ to{ stroke-dashoffset:-140; } }
-  .node{ fill:var(--void); stroke-width:2; }
-  .node--q{ stroke:var(--violet-bright); }
-  .node--c{ stroke:rgba(167,180,210,0.7); }
-  .node--a{ stroke:var(--blue-bright); }
-  .node-glow{ opacity:0.35; animation:pulse 2.4s ease-in-out infinite; }
-  @keyframes pulse{ 0%,100%{ opacity:0.18; r:14; } 50%{ opacity:0.4; r:19; } }
-  .graph-label{ font-family:var(--ff-mono); font-size:9.5px; fill:var(--ink-faint); letter-spacing:0.04em; }
-
-  .hero__chip{
-    position:absolute; display:flex; align-items:center; gap:9px;
-    padding:11px 15px; border-radius:var(--r-md); border:1px solid var(--line-strong);
-    background:rgba(10,12,22,0.82); backdrop-filter:blur(12px);
-    box-shadow:0 16px 40px -16px rgba(0,0,0,0.55);
-    font-size:0.82rem;
-  }
-  .hero__chip strong{ font-family:var(--ff-display); font-size:0.98rem; }
-  .hero__chip span{ color:var(--ink-faint); display:block; font-size:0.74rem; }
-  .hero__chip--1{ left:-18px; top:18px; }
-  .hero__chip--2{ right:-14px; bottom:-16px; }
-  .chip-dot{ width:8px; height:8px; border-radius:50%; flex:none; }
-  .chip-dot--v{ background:var(--violet); }
-  .chip-dot--b{ background:var(--blue); }
-
-  /* ============ SECTION SHELL ============ */
-  .section{ padding:108px 0; scroll-margin-top:110px; }
-  .section--tight{ padding-top:0; }
-  .section__head{ max-width:640px; margin-bottom:48px; }
-  .eyebrow{
-    font-family:var(--ff-mono); font-size:0.8rem; letter-spacing:0.16em; text-transform:uppercase;
-    color:var(--violet-bright); display:block; margin-bottom:14px;
-  }
-  .section__title{ font-size:clamp(1.7rem, 3.4vw, 2.3rem); }
-  .section__lede{ margin-top:14px; color:var(--ink-dim); font-size:1.02rem; line-height:1.7; }
-
-  .panel-bg{
-    background:var(--abyss); border-radius:36px; border:1px solid var(--line);
-  }
-
-  /* ============ ABOUT ============ */
-  .about__grid{ display:grid; grid-template-columns:1fr; gap:48px; align-items:start; }
-  .about__text p{ color:var(--ink-dim); line-height:1.8; font-size:1.03rem; }
-  .about__text p + p{ margin-top:16px; }
-  .about__fit{
-    margin-top:22px; padding:16px 18px; border-radius:var(--r-md); border:1px solid var(--line);
-    background:rgba(255,255,255,0.025); font-size:0.95rem; color:var(--ink-dim);
-  }
-  .about__fit strong{ color:var(--ink); font-family:var(--ff-mono); font-weight:600; font-size:0.85rem; letter-spacing:0.03em; }
-
-  .about__photo{
-    position:relative; border-radius:var(--r-xl); padding:22px; border:1px solid var(--line);
-    background:linear-gradient(165deg, rgba(139,124,246,0.10), rgba(61,169,252,0.06));
-    display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center;
-  }
-  .about__photo-frame{
-    width:148px; height:148px; border-radius:26px; overflow:hidden; border:1px solid var(--line-strong);
-    box-shadow:0 20px 50px -18px rgba(0,0,0,0.6);
-  }
-  .about__photo-frame img{ width:100%; height:100%; object-fit:cover; }
-  .about__photo-name{ font-family:var(--ff-display); font-size:1.1rem; }
-  .about__photo-loc{ font-family:var(--ff-mono); font-size:0.78rem; color:var(--ink-faint); }
-  .about__photo-degree{
-    width:100%; padding-top:14px; border-top:1px solid var(--line);
-    font-size:0.82rem; color:var(--ink-dim); line-height:1.6;
-  }
-
-  .pillars{ margin-top:40px; display:grid; grid-template-columns:1fr; gap:14px; }
-  .pillar{
-    padding:20px; border-radius:var(--r-md); border:1px solid var(--line);
-    background:rgba(255,255,255,0.02);
-    transition:border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
-  }
-  .pillar:hover{ border-color:rgba(139,124,246,0.35); transform:translateY(-3px); background:rgba(255,255,255,0.035); }
-  .pillar h4{ font-size:1rem; margin-bottom:7px; }
-  .pillar p{ color:var(--ink-dim); font-size:0.9rem; line-height:1.6; }
-
-  /* ============ SKILLS ============ */
-  .skills__grid{ display:grid; grid-template-columns:1fr; gap:18px; }
-  .skill-card{
-    padding:26px; border-radius:var(--r-lg); border:1px solid var(--line);
-    background:rgba(255,255,255,0.02);
-  }
-  .skill-card h3{
-    font-family:var(--ff-mono); font-size:0.86rem; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--ink); font-weight:600; margin-bottom:16px; display:flex; align-items:center; gap:10px;
-  }
-  .skill-card h3::before{ content:""; width:7px; height:7px; border-radius:2px; background:var(--grad); flex:none; }
-  .pill-row{ display:flex; flex-wrap:wrap; gap:8px; }
-  .pill{
-    font-family:var(--ff-mono); font-size:0.8rem; padding:7px 12px; border-radius:var(--r-pill);
-    border:1px solid var(--line); color:var(--ink-dim); background:rgba(255,255,255,0.015);
-  }
-
-  /* ============ PROJECTS ============ */
-  .projects__list{ display:grid; gap:22px; }
-  .project-card{
-    border-radius:var(--r-xl); border:1px solid var(--line); background:rgba(255,255,255,0.022);
-    padding:30px; position:relative; overflow:hidden;
-    transition:border-color 0.25s ease, transform 0.25s ease;
-  }
-  .project-card:hover{ border-color:rgba(139,124,246,0.3); }
-  .project-card__top{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; justify-content:space-between; }
-  .project-card__tag{
-    font-family:var(--ff-mono); font-size:0.74rem; letter-spacing:0.06em; text-transform:uppercase;
-    color:var(--blue-bright); padding:6px 11px; border-radius:var(--r-pill);
-    border:1px solid rgba(61,169,252,0.3); background:rgba(61,169,252,0.07);
-  }
-  .project-card__featured{
-    font-family:var(--ff-mono); font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint);
-  }
-  .project-card h3{ font-size:1.28rem; margin-top:14px; }
-  .project-card__problem{ margin-top:14px; display:grid; gap:8px; }
-  .project-card__row{ display:flex; gap:8px; font-size:0.96rem; line-height:1.65; color:var(--ink-dim); }
-  .project-card__row b{ color:var(--ink); font-family:var(--ff-mono); font-size:0.78rem; letter-spacing:0.04em; text-transform:uppercase; flex:none; padding-top:3px; min-width:78px; }
-  .project-card__bullets{ margin-top:16px; display:grid; gap:9px; }
-  .project-card__bullets li{ display:flex; gap:10px; color:var(--ink-dim); font-size:0.93rem; line-height:1.6; }
-  .project-card__bullets li::before{ content:"›"; color:var(--violet-bright); font-family:var(--ff-mono); flex:none; }
-  .project-card__stack{ margin-top:18px; display:flex; flex-wrap:wrap; gap:8px; }
-  .stack-tag{
-    font-family:var(--ff-mono); font-size:0.76rem; padding:6px 10px; border-radius:6px;
-    border:1px solid var(--line); color:var(--ink-faint);
-  }
-  .project-card__actions{ margin-top:22px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-  .details-toggle{ display:inline-flex; align-items:center; gap:6px; color:var(--ink-dim); font-size:0.88rem; padding:10px 4px; }
-  .details-toggle:hover{ color:var(--ink); }
-  .details-toggle svg{ width:14px; height:14px; transition:transform 0.25s ease; }
-  .details-toggle[aria-expanded="true"] svg{ transform:rotate(180deg); }
-  .project-card__details{
-    max-height:0; overflow:hidden; transition:max-height 0.4s ease;
-  }
-  .project-card__details-inner{
-    padding-top:18px; margin-top:18px; border-top:1px solid var(--line);
-    color:var(--ink-dim); font-size:0.93rem; line-height:1.7;
-  }
-
-  /* ============ TIMELINE ============ */
-  .timeline{ display:grid; gap:8px; }
-  .timeline-item{ position:relative; padding:26px 0 26px 30px; border-left:1px solid var(--line); }
-  .timeline-item:last-child{ border-left:1px solid transparent; }
-  .timeline-item::before{
-    content:""; position:absolute; left:-6px; top:30px; width:11px; height:11px; border-radius:50%;
-    background:var(--void); border:2px solid var(--violet-bright);
-  }
-  .timeline-item h3{ font-size:1.08rem; }
-  .timeline-item p{ margin-top:10px; color:var(--ink-dim); line-height:1.7; font-size:0.97rem; }
-  .timeline-item ul{ margin-top:12px; display:grid; gap:8px; }
-  .timeline-item li{ display:flex; gap:10px; color:var(--ink-dim); font-size:0.93rem; line-height:1.6; }
-  .timeline-item li::before{ content:"›"; color:var(--blue-bright); font-family:var(--ff-mono); flex:none; }
-
-  /* ============ EDUCATION ============ */
-  .education-card{
-    padding:30px; border-radius:var(--r-lg); border:1px solid var(--line); background:rgba(255,255,255,0.02);
-    display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between; align-items:center;
-  }
-  .education-card h3{ font-size:1.15rem; }
-  .education-card p{ color:var(--ink-dim); margin-top:6px; font-size:0.94rem; }
-  .education-card__score{
-    font-family:var(--ff-mono); text-align:right; color:var(--violet-bright); font-size:0.86rem;
-  }
-  .education-card__score strong{ display:block; font-size:1.6rem; color:var(--ink); font-family:var(--ff-display); }
-
-  /* ============ RESEARCH ============ */
-  .research__grid{ display:grid; gap:18px; }
-  .research-card{
-    padding:26px; border-radius:var(--r-lg); border:1px solid var(--line); background:rgba(255,255,255,0.02);
-    transition:border-color 0.25s ease;
-  }
-  .research-card:hover{ border-color:rgba(61,169,252,0.3); }
-  .research-card h3{ font-size:1.05rem; }
-  .research-card__meta{ margin-top:8px; font-family:var(--ff-mono); font-size:0.78rem; color:var(--blue-bright); }
-  .research-card p.desc{ margin-top:12px; color:var(--ink-dim); font-size:0.92rem; line-height:1.65; }
-  .research-card__cite{ margin-top:10px; font-family:var(--ff-mono); font-size:0.74rem; color:var(--ink-faint); }
-  .research-card__link{ margin-top:14px; display:inline-flex; align-items:center; gap:6px; font-size:0.86rem; color:var(--ink); }
-  .research-card__link svg{ width:13px; height:13px; }
-
-  /* ============ CERTS ============ */
-  .certs__grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-  .cert-badge{
-    padding:16px 18px; border-radius:var(--r-md); border:1px solid var(--line); background:rgba(255,255,255,0.018);
-    display:flex; align-items:center; gap:12px; transition:border-color 0.22s ease, transform 0.22s ease;
-  }
-  .cert-badge:hover{ border-color:rgba(139,124,246,0.3); transform:translateY(-2px); }
-  .cert-badge__icon{
-    width:36px; height:36px; border-radius:9px; flex:none; display:grid; place-items:center;
-    background:rgba(139,124,246,0.1); color:var(--violet-bright);
-  }
-  .cert-badge__icon svg{ width:17px; height:17px; }
-  .cert-badge strong{ display:block; font-size:0.92rem; }
-  .cert-badge span{ display:block; font-size:0.78rem; color:var(--ink-faint); margin-top:2px; }
-
-  /* ============ STATS ============ */
-  .stats__grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
-  .stat-card{
-    padding:24px 20px; border-radius:var(--r-lg); border:1px solid var(--line);
-    background:rgba(255,255,255,0.02); text-align:left;
-  }
-  .stat-card strong{
-    display:block; font-family:var(--ff-display); font-size:2.1rem; font-weight:600;
-    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .stat-card span{ display:block; margin-top:8px; color:var(--ink-dim); font-size:0.86rem; line-height:1.5; }
-
-  /* ============ CONTACT ============ */
-  .contact__grid{ display:grid; grid-template-columns:1fr; gap:22px; }
-  .contact-card{
-    padding:34px; border-radius:var(--r-xl); border:1px solid var(--line);
-  }
-  .contact-card--main{
-    background:linear-gradient(165deg, rgba(139,124,246,0.10), rgba(61,169,252,0.05));
-  }
-  .contact-card--side{ background:rgba(255,255,255,0.02); }
-  .contact-card h3{ font-size:1.3rem; }
-  .contact-card p{ margin-top:12px; color:var(--ink-dim); line-height:1.7; font-size:0.98rem; }
-  .contact__rows{ margin-top:24px; display:grid; gap:12px; }
-  .contact__row{
-    display:flex; align-items:center; gap:14px; padding:14px 16px; border-radius:var(--r-md);
-    border:1px solid var(--line); background:rgba(0,0,0,0.18);
-  }
-  .contact__row svg{ width:17px; height:17px; color:var(--violet-bright); flex:none; }
-  .contact__row span{ font-family:var(--ff-mono); font-size:0.72rem; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.06em; display:block; }
-  .contact__row a, .contact__row p{ font-size:0.94rem; margin-top:2px; word-break:break-word; }
-  .contact-card__actions{ margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; }
-
-  /* ============ FOOTER ============ */
-  .footer{
-    padding:44px 0 60px; display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center;
-    color:var(--ink-faint); font-size:0.85rem; border-top:1px solid var(--line); margin-top:30px;
-  }
-  .footer a{ color:var(--ink-dim); }
-  .footer a:hover{ color:var(--ink); }
-
-  .to-top{
-    position:fixed; right:22px; bottom:22px; width:46px; height:46px; border-radius:50%;
-    border:1px solid var(--line-strong); background:rgba(10,12,22,0.85); backdrop-filter:blur(10px);
-    display:grid; place-items:center; opacity:0; pointer-events:none; transform:translateY(10px);
-    transition:opacity 0.25s ease, transform 0.25s ease; z-index:90;
-  }
-  .to-top.is-visible{ opacity:1; pointer-events:auto; transform:translateY(0); }
-  .to-top svg{ width:18px; height:18px; }
-
-  /* ============ REVEAL ============ */
-  .reveal{ opacity:0; transform:translateY(22px); transition:opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.in-view{ opacity:1; transform:translateY(0); }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
-    html{ scroll-behavior:auto; }
-  }
-
-  /* ============ RESPONSIVE ============ */
-  @media (min-width: 720px){
-    .about__grid{ grid-template-columns:1.5fr 1fr; }
-    .pillars{ grid-template-columns:repeat(2,1fr); }
-    .skills__grid{ grid-template-columns:repeat(2,1fr); }
-    .certs__grid{ grid-template-columns:repeat(3,1fr); }
-    .stats__grid{ grid-template-columns:repeat(3,1fr); }
-    .contact__grid{ grid-template-columns:1.2fr 1fr; }
-  }
-  @media (min-width: 980px){
-    .hero__inner{ grid-template-columns:1.05fr 0.95fr; }
-    .skills__grid{ grid-template-columns:repeat(3,1fr); }
-    .nav__toggle{ display:none; }
-  }
-  @media (max-width: 860px){
-    .nav__links{ display:none; }
-    .nav__toggle{ display:grid; place-items:center; padding:8px; }
-    .nav__cta .btn--sm span{ display:none; }
-  }
-  @media (max-width: 540px){
-    .section{ padding:78px 0; }
-    .hero{ padding:128px 0 60px; }
-    .certs__grid{ grid-template-columns:1fr; }
-    .stats__grid{ grid-template-columns:1fr 1fr; }
-    .hero__chip{ position:static; margin-top:14px; width:fit-content; }
-    .hero__chip--1{ margin-top:18px; }
-  }
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="page-noise" aria-hidden="true"></div>
 
-<!-- ============ NAV ============ -->
-<header class="nav" id="siteNav">
-  <div class="nav__inner">
-    <a class="nav__brand" href="#top" aria-label="Lathasri Ravirala, back to top">
-      <span class="nav__mark">LR</span>
-      <span class="nav__name">Lathasri Ravirala</span>
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#research">Research</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="nav__cta">
-      <button type="button" class="btn btn--ghost btn--sm" id="resumeBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-        <span>Resume</span>
-      </button>
-      <button type="button" class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
+  <header class="site-header" id="siteHeader">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="Lathasri Ravirala, home">
+        <span class="brand__mark">LR</span>
+        <span class="brand__text">
+          <strong>Lathasri Ravirala</strong>
+          <small>AI &amp; Data Systems</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Work</a>
+        <a href="#research">Research</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
-  </div>
-  <nav class="nav__mobile" id="navMobile" aria-label="Mobile">
-    <a href="#about">About</a>
-    <a href="#expertise">Expertise</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#research">Research</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
 
-<main id="main">
-  <div class="wrap">
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#about">About <span>01</span></a>
+      <a href="#expertise">Expertise <span>02</span></a>
+      <a href="#projects">Featured work <span>03</span></a>
+      <a href="#experience">Experience <span>04</span></a>
+      <a href="#research">Research <span>05</span></a>
+      <a href="#contact">Contact <span>06</span></a>
+    </nav>
+  </header>
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="top" aria-label="Introduction">
-      <div class="hero__inner">
-        <div class="hero__copy reveal in-view">
-          <div class="status-pill"><span class="status-dot"></span> Open to AI Engineering &amp; Data Science roles</div>
-          <p class="hero__role">AI Engineer · Data Scientist · Data Engineer</p>
-          <h1 class="hero__title">Lathasri<br>Ravirala</h1>
-          <p class="hero__lede">I build retrieval-augmented systems, computer-vision models, and analytics products that turn messy, multi-source data into decisions people can act on — engineered to hold up outside the notebook.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#projects">View Projects</a>
-            <a class="btn btn--ghost" href="#contact">Contact Me</a>
-          </div>
-          <div class="hero__social">
-            <a href="https://github.com/RaviralaLathasri" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.8 11 .6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.6.1-.6 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.1-3.1-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1.9-.2 1.8-.3 2.7-.3.9 0 1.8.1 2.7.3 2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.6 7.8-5.9 7.8-11C23.3 5.6 18.3.5 12 .5z"/></svg>
-              GitHub
-            </a>
-            <a href="https://linkedin.com/in/lathasri-ravirala-06b606309" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.5V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.1 2.3 4.1 5.3v6.3zM5.3 7.4a2 2 0 110-4.1 2 2 0 010 4.1zM7 20.4H3.6V9H7v11.4z"/></svg>
-              LinkedIn
-            </a>
-            <a href="mailto:lathasriravirala2003@gmail.com">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
-              Email
-            </a>
-          </div>
+  <main id="main">
+    <section class="hero section-shell" id="top" aria-labelledby="heroTitle">
+      <div class="hero__copy reveal is-visible">
+        <div class="availability"><span></span> Open to high-impact AI &amp; data roles</div>
+        <p class="hero__intro">Hello, I’m Lathasri—AI engineer &amp; data scientist.</p>
+        <h1 id="heroTitle">I build AI systems that turn <em>data into decisions.</em></h1>
+        <p class="hero__summary">Grounded LLM applications, production-minded ML, and analytics products engineered for speed, accuracy, and clean execution.</p>
+
+        <div class="hero__actions">
+          <a class="button button--primary" href="#projects">Explore selected work <span aria-hidden="true">↘</span></a>
+          <button class="button button--secondary" id="resumeBtn" type="button">Download résumé <span aria-hidden="true">↓</span></button>
         </div>
 
-        <div class="hero__visual reveal in-view" aria-hidden="true">
-          <div class="hero__panel">
-            <svg class="hero__graph" viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg">
-              <path class="flow-line flow-line--v" d="M50,210 C155,210 155,90 260,90"/>
-              <path class="flow-line flow-line--v" d="M50,210 C155,210 155,210 260,210"/>
-              <path class="flow-line flow-line--v" d="M50,210 C155,210 155,330 260,330"/>
-              <path class="flow-line flow-line--b" d="M260,90 C365,90 365,210 470,210"/>
-              <path class="flow-line flow-line--b" d="M260,210 C365,210 365,210 470,210"/>
-              <path class="flow-line flow-line--b" d="M260,330 C365,330 365,210 470,210"/>
+        <div class="hero__links" aria-label="Social links">
+          <a href="https://github.com/RaviralaLathasri" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://linkedin.com/in/lathasri-ravirala-06b606309" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="mailto:lathasriravirala2003@gmail.com">Email <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
 
-              <circle class="node-glow" cx="50" cy="210" r="14" fill="#8b7cf6"/>
-              <circle class="node node--q" cx="50" cy="210" r="9"/>
-              <text class="graph-label" x="50" y="240" text-anchor="middle">query</text>
+      <div class="hero__visual reveal is-visible" aria-label="AI systems profile card">
+        <div class="system-card">
+          <div class="system-card__top">
+            <div><span class="live-dot"></span> SYSTEM PROFILE</div>
+            <span>HYD / IND</span>
+          </div>
 
-              <circle class="node node--c" cx="260" cy="90" r="6"/>
-              <circle class="node node--c" cx="260" cy="210" r="6"/>
-              <circle class="node node--c" cx="260" cy="330" r="6"/>
-              <text class="graph-label" x="260" y="365" text-anchor="middle">retrieved chunks</text>
+          <div class="profile-chip">
+            <img src="https://avatars.githubusercontent.com/u/165140495?v=4" alt="Lathasri Ravirala" width="88" height="88" />
+            <div>
+              <span>ENGINEER · RESEARCHER</span>
+              <strong>Lathasri<br />Ravirala</strong>
+            </div>
+          </div>
 
-              <circle class="node-glow" cx="470" cy="210" r="14" fill="#3da9fc" style="animation-delay:-1.2s"/>
-              <circle class="node node--a" cx="470" cy="210" r="9"/>
-              <text class="graph-label" x="470" y="240" text-anchor="middle">answer</text>
+          <div class="system-map" aria-hidden="true">
+            <svg viewBox="0 0 560 260" role="img">
+              <defs>
+                <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#9d8cff" />
+                  <stop offset="1" stop-color="#54d6ff" />
+                </linearGradient>
+                <radialGradient id="coreGradient">
+                  <stop offset="0" stop-color="#b8abff" />
+                  <stop offset="1" stop-color="#6d5bd0" />
+                </radialGradient>
+              </defs>
+              <g class="map-grid">
+                <path d="M20 42H540M20 100H540M20 158H540M20 216H540" />
+                <path d="M86 18V242M216 18V242M346 18V242M476 18V242" />
+              </g>
+              <g class="flow-paths">
+                <path d="M88 64C155 64 188 122 270 130" />
+                <path d="M88 202C160 202 189 145 270 130" />
+                <path d="M270 130C355 115 386 62 472 62" />
+                <path d="M270 130C350 145 390 202 472 202" />
+              </g>
+              <g class="map-nodes">
+                <circle cx="88" cy="64" r="7" /><circle cx="88" cy="202" r="7" />
+                <circle cx="472" cy="62" r="7" /><circle cx="472" cy="202" r="7" />
+              </g>
+              <circle class="core-pulse" cx="270" cy="130" r="45" />
+              <circle class="core" cx="270" cy="130" r="25" />
+              <text x="63" y="45">RAW DATA</text>
+              <text x="52" y="229">CONTEXT</text>
+              <text x="443" y="44">MODELS</text>
+              <text x="434" y="229">DECISIONS</text>
+              <text class="core-text" x="270" y="134" text-anchor="middle">LR</text>
             </svg>
           </div>
-          <div class="hero__chip hero__chip--1">
-            <span class="chip-dot chip-dot--v"></span>
-            <div><strong>6</strong><span>Production-grade systems shipped</span></div>
+
+          <div class="system-card__bottom">
+            <div><span>FOCUS</span><strong>RAG · ML · BI</strong></div>
+            <div><span>MODE</span><strong>BUILD / SHIP</strong></div>
+            <span class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
           </div>
-          <div class="hero__chip hero__chip--2">
-            <span class="chip-dot chip-dot--b"></span>
-            <div><strong>3</strong><span>Research papers published</span></div>
+        </div>
+        <div class="floating-proof floating-proof--one"><span>MODEL ACCURACY</span><strong>92%</strong></div>
+        <div class="floating-proof floating-proof--two"><span>DATA MODELED</span><strong>28M+</strong></div>
+      </div>
+    </section>
+
+    <section class="trust-strip section-shell reveal" aria-label="Key metrics">
+      <div class="trust-item"><strong>28M+</strong><span>AQI observations modeled</span></div>
+      <div class="trust-item"><strong>92%</strong><span>Medical AI accuracy</span></div>
+      <div class="trust-item"><strong>06</strong><span>End-to-end systems shipped</span></div>
+      <div class="trust-item"><strong>03</strong><span>Research papers</span></div>
+    </section>
+
+    <section class="section section-shell" id="about">
+      <div class="section-kicker reveal"><span>01</span> Positioning</div>
+      <div class="positioning-grid">
+        <div class="section-heading reveal">
+          <p>MORE THAN MODELS</p>
+          <h2>Technical depth,<br /><em>product judgment.</em></h2>
+        </div>
+        <div class="positioning-copy reveal">
+          <p class="lead">I work at the point where machine learning, data engineering, and product delivery meet.</p>
+          <p>I design systems that retrieve the right context, surface the right signal, and make complex information usable. The work spans experimentation through deployment—without losing sight of who needs the output or why.</p>
+          <div class="proof-list">
+            <div><span>01</span><p>Builds complete AI tools, not isolated notebooks</p></div>
+            <div><span>02</span><p>Connects research thinking with practical execution</p></div>
+            <div><span>03</span><p>Moves fluently across ML, analytics, APIs, and deployment</p></div>
+            <div><span>04</span><p>Turns dense technical work into decision-ready products</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section panel-bg" id="about">
-      <div style="padding:64px 36px;">
-      <div class="section__head reveal">
-        <span class="eyebrow">About</span>
-        <h2 class="section__title">Engineering judgment, applied to data</h2>
-      </div>
-      <div class="about__grid">
-        <div class="about__text reveal">
-          <p>I specialize in turning messy, multi-source data into systems people can trust — retrieval pipelines that don't hallucinate, dashboards that drive real decisions, and models that hold up outside the notebook.</p>
-          <p>My work spans the full stack: data engineering, applied machine learning, and the analytics layer that makes results usable by non-technical stakeholders. I'd rather ship one system end to end than prototype ten that never leave a notebook.</p>
-          <div class="about__fit"><strong>Best fit for —</strong> AI/ML engineering, applied data science, or analytics engineering roles, and early-stage teams that need one person who can own data from ingestion to deployment.</div>
-
-          <div class="pillars">
-            <article class="pillar">
-              <h4>Retrieval &amp; LLM Systems</h4>
-              <p>Grounded RAG pipelines designed to refuse unsupported answers, not just generate fluent ones.</p>
-            </article>
-            <article class="pillar">
-              <h4>Applied Computer Vision</h4>
-              <p>Diagnostic-grade image classifiers tuned for real deployment constraints, not just leaderboard scores.</p>
-            </article>
-            <article class="pillar">
-              <h4>Decision-Ready Analytics</h4>
-              <p>Power BI and Tableau products built on modeled, validated data — not raw exports.</p>
-            </article>
-            <article class="pillar">
-              <h4>Full-Stack Delivery</h4>
-              <p>FastAPI and Flask services that take a model from notebook to a working product.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="about__photo reveal">
-          <div class="about__photo-frame">
-            <img src="https://avatars.githubusercontent.com/u/165140495?v=4" alt="Portrait of Lathasri Ravirala" loading="lazy" />
-          </div>
-          <div class="about__photo-name">Lathasri Ravirala</div>
-          <div class="about__photo-loc">HYDERABAD, TELANGANA, INDIA</div>
-          <div class="about__photo-degree">BTech, Artificial Intelligence &amp; Data Science<br>Methodist College of Engineering &amp; Technology<br>2022 – 2026 · CGPA 8.6</div>
-        </div>
-      </div>
-      </div>
-    </section>
-
-    <!-- ============ SKILLS ============ -->
-    <section class="section" id="expertise">
-      <div class="section__head reveal">
-        <span class="eyebrow">Expertise</span>
-        <h2 class="section__title">Technical depth, organized</h2>
-        <p class="section__lede">Five clusters that cover how I take a problem from raw data to a deployed product.</p>
-      </div>
-      <div class="skills__grid">
-        <article class="skill-card reveal">
-          <h3>Machine Learning / AI</h3>
-          <div class="pill-row">
-            <span class="pill">RAG</span><span class="pill">LLMs</span><span class="pill">NLP</span>
-            <span class="pill">Deep Learning</span><span class="pill">CNN</span><span class="pill">Computer Vision</span>
-          </div>
-        </article>
-        <article class="skill-card reveal">
-          <h3>Data Engineering</h3>
-          <div class="pill-row">
-            <span class="pill">Python</span><span class="pill">SQL</span><span class="pill">PostgreSQL</span>
-            <span class="pill">MySQL</span><span class="pill">ETL Pipelines</span><span class="pill">Data Modeling</span>
-          </div>
-        </article>
-        <article class="skill-card reveal">
-          <h3>Analytics &amp; BI</h3>
-          <div class="pill-row">
-            <span class="pill">Power BI</span><span class="pill">Tableau</span><span class="pill">DAX</span>
-            <span class="pill">KPI Design</span><span class="pill">EDA</span><span class="pill">Data Storytelling</span>
-          </div>
-        </article>
-        <article class="skill-card reveal">
-          <h3>Deployment &amp; Product</h3>
-          <div class="pill-row">
-            <span class="pill">FastAPI</span><span class="pill">Flask</span><span class="pill">Docker</span>
-            <span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Railway</span>
-          </div>
-        </article>
-        <article class="skill-card reveal">
-          <h3>Tools &amp; Platforms</h3>
-          <div class="pill-row">
-            <span class="pill">TensorFlow</span><span class="pill">Keras</span><span class="pill">OpenCV</span>
-            <span class="pill">Qiskit</span><span class="pill">Tkinter</span><span class="pill">VS Code</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============ PROJECTS ============ -->
-    <section class="section" id="projects">
-      <div class="section__head reveal">
-        <span class="eyebrow">Projects</span>
-        <h2 class="section__title">Selected case studies</h2>
-        <p class="section__lede">Six systems, end to end — the problem, the build, and the measurable result.</p>
-      </div>
-
-      <div class="projects__list">
-
-        <!-- Project 1 -->
-        <article class="project-card reveal">
-          <div class="project-card__top">
-            <span class="project-card__tag">RAG / LLM Systems</span>
-            <span class="project-card__featured">Featured</span>
-          </div>
-          <h3>RAG Chatbot with Meta LLaMA</h3>
-          <div class="project-card__problem">
-            <div class="project-card__row"><b>Problem</b><span>Document QA systems often hallucinate answers that aren't grounded in the source material.</span></div>
-            <div class="project-card__row"><b>Solution</b><span>A strict retrieval-augmented chatbot using Python, Flask, and Meta LLaMA via OpenRouter — chunking documents into 500-word segments with 50-word overlap to preserve context.</span></div>
-          </div>
-          <ul class="project-card__bullets">
-            <li>PDF/TXT ingestion up to 16MB using PyPDF2</li>
-            <li>Keyword-scored semantic search across top-3 retrieved chunks</li>
-            <li>Low-temperature generation tuned for factual precision</li>
-            <li>Strict no-hallucination policy — answers only from loaded content</li>
-          </ul>
-          <div class="project-card__stack">
-            <span class="stack-tag">Python</span><span class="stack-tag">Flask</span><span class="stack-tag">OpenRouter</span>
-            <span class="stack-tag">RAG</span><span class="stack-tag">LLM</span>
-          </div>
-          <div class="project-card__actions">
-            <a class="btn btn--ghost btn--sm" href="https://github.com/RaviralaLathasri/rag-chatbot" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.8 11 .6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.6.1-.6 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.1-3.1-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1.9-.2 1.8-.3 2.7-.3.9 0 1.8.1 2.7.3 2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.6 7.8-5.9 7.8-11C23.3 5.6 18.3.5 12 .5z"/></svg>
-              Repository
-            </a>
-            <button type="button" class="details-toggle" aria-expanded="false" data-target="detail-1">
-              Read case study
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-          </div>
-          <div class="project-card__details" id="detail-1">
-            <div class="project-card__details-inner">
-              Built as a full-stack document QA application with a responsive vanilla JavaScript interface and a dedicated retrieval back end. Designed to reject any query the source documents don't directly support, rather than letting the model guess.
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project-card reveal">
-          <div class="project-card__top"><span class="project-card__tag">Analytics &amp; BI</span></div>
-          <h3>Air Quality &amp; Environmental Insights — Power BI</h3>
-          <div class="project-card__problem">
-            <div class="project-card__row"><b>Problem</b><span>Air-quality data across India was scattered, with no unified, decision-ready view of pollution drivers.</span></div>
-            <div class="project-card__row"><b>Solution</b><span>A Power BI product modeling 10 years of multi-source pollution and forest-cover data into a star schema with custom DAX measures and regional drill-down.</span></div>
-          </div>
-          <ul class="project-card__bullets">
-            <li>28M+ AQI observations analyzed across Indian states</li>
-            <li>Delhi identified as the highest pollution hotspot</li>
-            <li>PM10 isolated as the largest contributor, at 64.4M pollutant units</li>
-            <li>Forest-cover loss linked to worsening AQI trends</li>
-          </ul>
-          <div class="project-card__stack">
-            <span class="stack-tag">Power BI</span><span class="stack-tag">DAX</span><span class="stack-tag">Data Modeling</span>
-          </div>
-          <div class="project-card__actions">
-            <a class="btn btn--ghost btn--sm" href="https://github.com/RaviralaLathasri/Air-Quality-Environmental-Insights" target="_blank" rel="noreferrer">Repository</a>
-            <a class="btn btn--ghost btn--sm" href="https://app.powerbi.com/view?r=eyJrIjoiOWRjMDA5MTQtNmI1OS00Y2Y2LTgyMzQtMzRjZTczYjRiYjQ0IiwidCI6ImRhZTA4MDk3LTgyNjAtNDk5Ni05MDY2LWZhZTExYmY3MWVhNiJ9" target="_blank" rel="noreferrer">Live dashboard</a>
-            <button type="button" class="details-toggle" aria-expanded="false" data-target="detail-2">
-              Read case study
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-          </div>
-          <div class="project-card__details" id="detail-2">
-            <div class="project-card__details-inner">
-              Includes trend analysis, pollution heat maps, and regional comparisons, with an emphasis on data validation and stakeholder-ready visual storytelling rather than raw chart dumps.
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project-card reveal">
-          <div class="project-card__top"><span class="project-card__tag">Analytics &amp; BI</span></div>
-          <h3>India Road Accident Analytics — Power BI</h3>
-          <div class="project-card__problem">
-            <div class="project-card__row"><b>Problem</b><span>Road-safety risk signals were fragmented across disconnected datasets, slowing intervention planning.</span></div>
-            <div class="project-card__row"><b>Solution</b><span>A multi-page Power BI report with drill-through actions and state-level analysis built for safety-planning teams.</span></div>
-          </div>
-          <ul class="project-card__bullets">
-            <li>30K+ accident records analyzed, 218 recorded fatalities</li>
-            <li>State highways flagged as the highest fatality risk</li>
-            <li>Rainy weather linked to 28.9% of fatal accidents</li>
-            <li>March and 23:05 identified as peak-risk windows</li>
-          </ul>
-          <div class="project-card__stack">
-            <span class="stack-tag">Power BI</span><span class="stack-tag">DAX</span><span class="stack-tag">Power Query</span>
-          </div>
-          <div class="project-card__actions">
-            <a class="btn btn--ghost btn--sm" href="https://github.com/RaviralaLathasri/Road-Accidents-Dashboard" target="_blank" rel="noreferrer">Repository</a>
-            <a class="btn btn--ghost btn--sm" href="https://app.powerbi.com/view?r=eyJrIjoiZTZmMDQ4ZDUtNTg1NC00NzliLWEzNTQtZDYyN2JmOGFhMGU2IiwidCI6ImRhZTA4MDk3LTgyNjAtNDk5Ni05MDY2LWZhZTExYmY3MWVhNiJ9" target="_blank" rel="noreferrer">Live dashboard</a>
-            <button type="button" class="details-toggle" aria-expanded="false" data-target="detail-3">
-              Read case study
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-          </div>
-          <div class="project-card__details" id="detail-3">
-            <div class="project-card__details-inner">
-              Dataset integration handled in Power Query, with interactive layers for weather, driver behavior, road type, and time-of-day — built so safety teams can prioritize high-risk corridors directly from the report.
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 4 -->
-        <article class="project-card reveal">
-          <div class="project-card__top"><span class="project-card__tag">FinTech / Applied AI</span></div>
-          <h3>Quantum-Enhanced Investment Recommendation System</h3>
-          <div class="project-card__problem">
-            <div class="project-card__row"><b>Problem</b><span>Retail investing platforms rarely combine portfolio optimization with real-time AI market intelligence.</span></div>
-            <div class="project-card__row"><b>Solution</b><span>A hybrid fintech prototype combining Qiskit QAOA portfolio allocation, Gemini-driven market sentiment, and a secure FastAPI back end.</span></div>
-          </div>
-          <ul class="project-card__bullets">
-            <li>QAOA-based portfolio allocation using quantum-inspired optimization</li>
-            <li>Gemini AI sentiment scoring for narrative investment guidance</li>
-            <li>Secure auth with bcrypt and session management on FastAPI/SQLite</li>
-            <li>Risk profiling and backtesting analytics for retail investors</li>
-          </ul>
-          <div class="project-card__stack">
-            <span class="stack-tag">FastAPI</span><span class="stack-tag">Qiskit</span><span class="stack-tag">Gemini AI</span><span class="stack-tag">SQLite</span>
-          </div>
-          <div class="project-card__actions">
-            <a class="btn btn--ghost btn--sm" href="https://github.com/RaviralaLathasri/Quntum-Enhancement-Investment-Recommendation-System" target="_blank" rel="noreferrer">Repository</a>
-            <button type="button" class="details-toggle" aria-expanded="false" data-target="detail-4">
-              Read case study
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-          </div>
-          <div class="project-card__details" id="detail-4">
-            <div class="project-card__details-inner">
-              Built for institutional-style portfolio decisions: live market feeds, automated tax-loss harvesting, and a risk profiler tuned for conservative investors. Public deployment and screenshot assets are pending an update.
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 5 -->
-        <article class="project-card reveal">
-          <div class="project-card__top"><span class="project-card__tag">Computer Vision / Medical AI</span></div>
-          <h3>Pneumonia &amp; Tuberculosis Detection with CNN</h3>
-          <div class="project-card__problem">
-            <div class="project-card__row"><b>Problem</b><span>Early respiratory-disease screening needs fast, reliable image classification, especially where specialist review is limited.</span></div>
-            <div class="project-card__row"><b>Solution</b><span>A 4-layer CNN classifying chest X-rays into Normal, Pneumonia, and Tuberculosis, paired with a desktop GUI for instant predictions.</span></div>
-          </div>
-          <ul class="project-card__bullets">
-            <li>92% classification accuracy across three diagnostic classes</li>
-            <li>BatchNormalization, Dropout, and augmentation for generalization</li>
-            <li>Evaluated on accuracy, macro F1, and ROC-AUC</li>
-            <li>Tkinter GUI for real-time X-ray upload and confidence scoring</li>
-          </ul>
-          <div class="project-card__stack">
-            <span class="stack-tag">TensorFlow</span><span class="stack-tag">Keras</span><span class="stack-tag">CNN</span><span class="stack-tag">OpenCV</span>
-          </div>
-          <div class="project-card__actions">
-            <a class="btn btn--ghost btn--sm" href="https://github.com/RaviralaLathasri/CNN-Based-Classification-of-Pnemonia-Tuberculosis" target="_blank" rel="noreferrer">Repository</a>
-            <button type="button" class="details-toggle" aria-expanded="false" data-target="detail-5">
-              Read case study
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-          </div>
-          <div class="project-card__details" id="detail-5">
-            <div class="project-card__details-inner">
-              Inputs are preprocessed to 224×224 with rotation, zoom, and flip augmentation. The project demonstrates a practical, deployable computer-vision workflow for healthcare screening rather than a notebook-only benchmark.
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 6 -->
-        <article class="project-card reveal">
-          <div class="project-card__top"><span class="project-card__tag">Applied AI / Career Tools</span></div>
-          <h3>Mentor AI</h3>
-          <div class="project-card__problem">
-            <div class="project-card__row"><b>Problem</b><span>Career guidance and interview preparation rarely scale to feel personal.</span></div>
-            <div class="project-card__row"><b>Solution</b><span>An AI platform for personalized learning and career guidance, including voice-based mock interviews with automated evaluation.</span></div>
-          </div>
-          <ul class="project-card__bullets">
-            <li>Voice-based mock interviews via speech-to-text</li>
-            <li>Automated interview evaluation with structured feedback</li>
-            <li>Text-to-speech for natural interview interaction</li>
-            <li>FastAPI back end deployed on Railway</li>
-          </ul>
-          <div class="project-card__stack">
-            <span class="stack-tag">FastAPI</span><span class="stack-tag">STT/TTS</span><span class="stack-tag">Railway</span>
-          </div>
-          <div class="project-card__actions">
-            <a class="btn btn--ghost btn--sm" href="https://github.com/RaviralaLathasri/Mentor-Ai" target="_blank" rel="noreferrer">Repository</a>
-            <button type="button" class="details-toggle" aria-expanded="false" data-target="detail-6">
-              Read case study
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-          </div>
-          <div class="project-card__details" id="detail-6">
-            <div class="project-card__details-inner">
-              Bridges traditional tutoring and AI-driven coaching: responses are evaluated in real time, with feedback structured around concrete, actionable skill gaps rather than generic scoring.
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ============ EXPERIENCE ============ -->
-    <section class="section" id="experience">
-      <div class="section__head reveal">
-        <span class="eyebrow">Experience</span>
-        <h2 class="section__title">Career highlights</h2>
-      </div>
-      <div class="timeline">
-        <article class="timeline-item reveal">
-          <h3>AI &amp; Data Science Research</h3>
-          <p>Compared Logistic Regression, Random Forest, and XGBoost on the Heart Disease UCI dataset. XGBoost delivered 90.1% accuracy and a 0.93 ROC-AUC, driving the model choice for clinical risk scoring.</p>
-          <ul>
-            <li>Documented findings and translated experimental results for cross-functional teams</li>
-          </ul>
-        </article>
-        <article class="timeline-item reveal">
-          <h3>End-to-End Analytics Delivery</h3>
-          <p>Cleaned and validated multi-source datasets, defined KPIs, and delivered dashboards that convert raw signals into operational decisions.</p>
-          <ul>
-            <li>Established customer churn and support metrics for subscriber retention</li>
-            <li>Built environmental dashboards quantifying pollution risk and public-health impact</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============ EDUCATION ============ -->
-    <section class="section section--tight" id="education">
-      <div class="section__head reveal">
-        <span class="eyebrow">Education</span>
-        <h2 class="section__title">Academic foundation</h2>
-      </div>
-      <div class="education-card reveal">
+    <section class="section section-shell" id="expertise">
+      <div class="section-kicker reveal"><span>02</span> Core expertise</div>
+      <div class="section-heading section-heading--row reveal">
         <div>
-          <h3>BTech, Artificial Intelligence &amp; Data Science</h3>
-          <p>Methodist College of Engineering &amp; Technology, Hyderabad · 2022 – 2026</p>
+          <p>CAPABILITY STACK</p>
+          <h2>Built across the<br /><em>full data lifecycle.</em></h2>
         </div>
-        <div class="education-card__score"><strong>8.6</strong>CGPA / 10</div>
+        <p class="section-note">A focused stack for taking systems from raw inputs to reliable outputs.</p>
       </div>
-    </section>
 
-    <!-- ============ RESEARCH ============ -->
-    <section class="section" id="research">
-      <div class="section__head reveal">
-        <span class="eyebrow">Research</span>
-        <h2 class="section__title">Publications</h2>
-      </div>
-      <div class="research__grid">
-        <a class="research-card reveal" href="https://isjem.com/?s=Superstoreorders+dataset" target="_blank" rel="noreferrer">
-          <h3>Visualizing Retail Trends and Performance Using Tableau</h3>
-          <div class="research-card__meta">ISJEM · April 2025</div>
-          <p class="desc">A retail analytics study across 51,290 transactions in five countries — identifying the U.S. as the top market, Apple Smartphones as the highest-selling product, and unstable margins on discount-heavy lines.</p>
-          <div class="research-card__cite">DOI: 10.55041/ISJEM03240</div>
-          <span class="research-card__link">Read paper
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
-          </span>
-        </a>
-        <a class="research-card reveal" href="https://ijcrt.org/download1.php?file=IJCRT2604183.pdf" target="_blank" rel="noreferrer">
-          <h3>Quantum Enhancement Investment Recommendation</h3>
-          <div class="research-card__meta">Methodist College of Engineering &amp; Technology · 2025</div>
-          <p class="desc">A hybrid classical-quantum recommendation platform combining QAOA, LSTM+ARIMA forecasting, and Gemini-driven news sentiment, with a risk profiler and tax-aware advisory layer.</p>
-          <div class="research-card__cite">Published via IJCRT</div>
-          <span class="research-card__link">Read paper
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
-          </span>
-        </a>
-        <article class="research-card reveal">
-          <h3>Intelligent Machine Learning Approaches for Early Disease Prediction</h3>
-          <div class="research-card__meta">Symbiosis Institute of Technology · 2025</div>
-          <p class="desc">A data-driven perspective on early disease detection using intelligent ML methods, with emphasis on model explainability and high-precision classification.</p>
-          <div class="research-card__cite">Conference paper · Research intern</div>
+      <div class="expertise-grid">
+        <article class="expertise-card expertise-card--wide reveal">
+          <div class="expertise-card__index">01 / AI SYSTEMS</div>
+          <div class="expertise-card__icon">✦</div>
+          <h3>AI / LLMs / RAG</h3>
+          <p>Grounded generation, retrieval pipelines, model evaluation, and practical computer vision.</p>
+          <ul><li>Python</li><li>Meta LLaMA</li><li>TensorFlow</li><li>Keras</li><li>NLP</li></ul>
+        </article>
+        <article class="expertise-card reveal">
+          <div class="expertise-card__index">02 / DATA</div>
+          <div class="expertise-card__icon">⌁</div>
+          <h3>Data Engineering</h3>
+          <p>Structured pipelines and durable data models for trustworthy downstream analysis.</p>
+          <ul><li>SQL</li><li>PostgreSQL</li><li>MySQL</li><li>ETL</li><li>Star Schema</li></ul>
+        </article>
+        <article class="expertise-card reveal">
+          <div class="expertise-card__index">03 / INSIGHT</div>
+          <div class="expertise-card__icon">↗</div>
+          <h3>Analytics / BI</h3>
+          <p>Decision-focused dashboards with clear KPIs, strong models, and useful drill-down.</p>
+          <ul><li>Power BI</li><li>DAX</li><li>Tableau</li><li>Power Query</li></ul>
+        </article>
+        <article class="expertise-card reveal">
+          <div class="expertise-card__index">04 / DELIVERY</div>
+          <div class="expertise-card__icon">◫</div>
+          <h3>Backend / Deployment</h3>
+          <p>Clean service layers and deployable applications that put models into real workflows.</p>
+          <ul><li>FastAPI</li><li>Flask</li><li>Docker</li><li>Railway</li><li>REST APIs</li></ul>
+        </article>
+        <article class="expertise-card expertise-card--accent reveal">
+          <div class="expertise-card__index">05 / PLATFORMS</div>
+          <div class="expertise-card__icon">◎</div>
+          <h3>Tools / Platforms</h3>
+          <p>The practical layer that keeps experimentation traceable and delivery efficient.</p>
+          <ul><li>Git</li><li>GitHub</li><li>Qiskit</li><li>OpenRouter</li><li>Gemini</li></ul>
         </article>
       </div>
     </section>
 
-    <!-- ============ CERTIFICATIONS ============ -->
-    <section class="section" id="certifications">
-      <div class="section__head reveal">
-        <span class="eyebrow">Credentials</span>
-        <h2 class="section__title">Certifications</h2>
-      </div>
-      <div class="certs__grid">
-        <a class="cert-badge reveal" href="https://www.datacamp.com/certificate/DAA0012897127415" target="_blank" rel="noreferrer">
-          <span class="cert-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
-          <div><strong>Data Analyst</strong><span>DataCamp</span></div>
-        </a>
-        <a class="cert-badge reveal" href="https://www.datacamp.com/certificate/DSA0016073568457" target="_blank" rel="noreferrer">
-          <span class="cert-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
-          <div><strong>Data Science</strong><span>DataCamp</span></div>
-        </a>
-        <a class="cert-badge reveal" href="https://app.manara.tech/certificate/1746862772-5A53D50E1438191D" target="_blank" rel="noreferrer">
-          <span class="cert-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
-          <div><strong>Data Engineer</strong><span>Manara</span></div>
-        </a>
-        <a class="cert-badge reveal" href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS69S104700190204455507" target="_blank" rel="noreferrer">
-          <span class="cert-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
-          <div><strong>Python</strong><span>NPTEL</span></div>
-        </a>
-        <a class="cert-badge reveal" href="https://www.credly.com/badges/9f801030-dd6c-43cf-a782-0a92b71d46b5/linked_in_profile" target="_blank" rel="noreferrer">
-          <span class="cert-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
-          <div><strong>Artificial Intelligence</strong><span>IBM · Credly</span></div>
-        </a>
-        <div class="cert-badge reveal">
-          <span class="cert-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
-          <div><strong>Power BI &amp; Data Viz</strong><span>Infosys</span></div>
+    <section class="section section-shell" id="projects">
+      <div class="section-kicker reveal"><span>03</span> Selected work</div>
+      <div class="section-heading section-heading--row reveal">
+        <div>
+          <p>CASE STUDIES</p>
+          <h2>Systems with a<br /><em>reason to exist.</em></h2>
         </div>
+        <p class="section-note">Five projects selected for technical range, practical value, and measurable outcomes.</p>
       </div>
-    </section>
 
-    <!-- ============ ACHIEVEMENTS ============ -->
-    <section class="section panel-bg" id="achievements">
-      <div style="padding:64px 36px;">
-      <div class="section__head reveal">
-        <span class="eyebrow">Impact</span>
-        <h2 class="section__title">Track record</h2>
-      </div>
-      <div class="stats__grid">
-        <article class="stat-card reveal"><strong>3</strong><span>Research papers published in 2025</span></article>
-        <article class="stat-card reveal"><strong>6</strong><span>End-to-end systems shipped</span></article>
-        <article class="stat-card reveal"><strong>92%</strong><span>Medical-AI classification accuracy</span></article>
-        <article class="stat-card reveal"><strong>28M+</strong><span>AQI data points modeled</span></article>
-        <article class="stat-card reveal"><strong>30K+</strong><span>Accident records analyzed</span></article>
-        <article class="stat-card reveal"><strong>6</strong><span>Professional certifications earned</span></article>
-      </div>
-      </div>
-    </section>
+      <article class="project-feature reveal">
+        <div class="project-feature__main">
+          <div class="project-meta"><span>FEATURED / 01</span><span>RAG · LLM SYSTEMS</span></div>
+          <div class="project-feature__title">
+            <h3>Grounded document intelligence with Meta LLaMA</h3>
+            <span class="project-number">01</span>
+          </div>
+          <p class="project-deck">A strict retrieval-augmented QA system designed to answer from source material—not model memory.</p>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="section" id="contact">
-      <div class="section__head reveal">
-        <span class="eyebrow">Contact</span>
-        <h2 class="section__title">Let's build something that ships</h2>
-      </div>
-      <div class="contact__grid">
-        <article class="contact-card contact-card--main reveal">
-          <h3>Open for AI, data, and product work</h3>
-          <p>Available for AI engineering, data science, and analytics engineering roles, plus select research collaborations. I typically reply within a day.</p>
-          <div class="contact__rows">
-            <div class="contact__row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
-              <div><span>Email</span><a href="mailto:lathasriravirala2003@gmail.com">lathasriravirala2003@gmail.com</a></div>
+          <div class="project-brief">
+            <div><span>THE PROBLEM</span><p>Document assistants often produce fluent but unsupported answers, making them difficult to trust.</p></div>
+            <div><span>THE BUILD</span><p>A Flask application that chunks, embeds, retrieves, and injects relevant context into Meta LLaMA through OpenRouter.</p></div>
+          </div>
+
+          <ul class="impact-list">
+            <li><span>01</span>Strict no-context / no-answer behavior to reduce hallucination risk</li>
+            <li><span>02</span>500-word chunks with 50-word overlap for context continuity</li>
+            <li><span>03</span>Multi-format document ingestion with session-aware interaction</li>
+          </ul>
+
+          <div class="project-stack"><span>Python</span><span>Flask</span><span>Meta LLaMA</span><span>OpenRouter</span><span>RAG</span></div>
+          <div class="project-actions">
+            <a class="text-link" href="https://github.com/RaviralaLathasri/rag-chatbot" target="_blank" rel="noreferrer">View repository <span>↗</span></a>
+            <details class="project-details">
+              <summary>Architecture notes <span>+</span></summary>
+              <p>Files are normalized into overlapping text windows, ranked against the user query, and passed to the model under a constrained prompt. The interface preserves session context while keeping source-grounding as the governing behavior.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="project-feature__visual" aria-hidden="true">
+          <div class="rag-window">
+            <div class="rag-window__bar"><i></i><i></i><i></i><span>retrieval_pipeline.py</span></div>
+            <div class="code-line"><b>01</b><span class="code-violet">query</span> = encode(user_input)</div>
+            <div class="code-line"><b>02</b>chunks = retrieve(<span class="code-cyan">query</span>, k=4)</div>
+            <div class="code-line"><b>03</b>context = rerank(chunks)</div>
+            <div class="code-line"><b>04</b><span class="code-violet">if</span> context.score &lt; threshold:</div>
+            <div class="code-line code-line--indent"><b>05</b><span class="code-cyan">return</span> NO_CONTEXT</div>
+            <div class="code-line"><b>06</b>answer = llama(context)</div>
+            <div class="retrieval-flow">
+              <span>DOCS</span><i></i><span>CHUNKS</span><i></i><span>RANK</span><i></i><span>LLM</span>
             </div>
-            <div class="contact__row">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.5V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.1 2.3 4.1 5.3v6.3zM5.3 7.4a2 2 0 110-4.1 2 2 0 010 4.1zM7 20.4H3.6V9H7v11.4z"/></svg>
-              <div><span>LinkedIn</span><a href="https://linkedin.com/in/lathasri-ravirala-06b606309" target="_blank" rel="noreferrer">linkedin.com/in/lathasri-ravirala-06b606309</a></div>
-            </div>
-            <div class="contact__row">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.8 11 .6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.6.1-.6 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.1-3.1-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1.9-.2 1.8-.3 2.7-.3.9 0 1.8.1 2.7.3 2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.6 7.8-5.9 7.8-11C23.3 5.6 18.3.5 12 .5z"/></svg>
-              <div><span>GitHub</span><a href="https://github.com/RaviralaLathasri" target="_blank" rel="noreferrer">github.com/RaviralaLathasri</a></div>
-            </div>
-            <div class="contact__row">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 1114 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-              <div><span>Location</span><p>Hyderabad, Telangana, India</p></div>
-            </div>
+            <div class="rag-status"><span></span> Response grounded in 4 source chunks</div>
+          </div>
+        </div>
+      </article>
+
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-meta"><span>02</span><span>ANALYTICS / BI</span></div>
+          <div class="project-card__metric"><strong>28M+</strong><span>AQI records</span></div>
+          <h3>Air Quality &amp; Environmental Insights</h3>
+          <p>Ten years of fragmented environmental data modeled into a unified Power BI decision product.</p>
+          <ul class="compact-impact"><li>Star schema across multi-source data</li><li>Custom DAX and regional drill-down</li><li>Pollution and forest-cover correlation</li></ul>
+          <div class="project-stack"><span>Power BI</span><span>DAX</span><span>Power Query</span></div>
+          <div class="project-actions">
+            <a class="text-link" href="https://github.com/RaviralaLathasri/Air-Quality-Environmental-Insights" target="_blank" rel="noreferrer">Repository <span>↗</span></a>
+            <a class="text-link" href="https://app.powerbi.com/view?r=eyJrIjoiOWRjMDA5MTQtNmI1OS00Y2Y2LTgyMzQtMzRjZTczYjRiYjQ0IiwidCI6ImRhZTA4MDk3LTgyNjAtNDk5Ni05MDY2LWZhZTExYmY3MWVhNiJ9" target="_blank" rel="noreferrer">Live report <span>↗</span></a>
+            <details class="project-details"><summary>Details <span>+</span></summary><p>Built for city and regional comparison, turning raw pollution readings into trends that support environmental and public-health decisions.</p></details>
           </div>
         </article>
 
-        <article class="contact-card contact-card--side reveal">
-          <h3>Quick actions</h3>
-          <p>Grab a copy of my resume or send a direct message — whichever is faster on your end.</p>
-          <div class="contact-card__actions">
-            <button type="button" class="btn btn--primary" id="resumeBtn2">Download Resume</button>
-            <a class="btn btn--ghost" href="mailto:lathasriravirala2003@gmail.com">Email Me</a>
+        <article class="project-card reveal">
+          <div class="project-meta"><span>03</span><span>COMPUTER VISION</span></div>
+          <div class="project-card__metric"><strong>92%</strong><span>accuracy</span></div>
+          <h3>Respiratory Disease Detection</h3>
+          <p>A deployable CNN workflow for classifying chest X-rays across three diagnostic categories.</p>
+          <ul class="compact-impact"><li>Normal, Pneumonia, and TB classes</li><li>Macro F1 and ROC-AUC evaluation</li><li>Real-time desktop prediction UI</li></ul>
+          <div class="project-stack"><span>TensorFlow</span><span>Keras</span><span>OpenCV</span></div>
+          <div class="project-actions">
+            <a class="text-link" href="https://github.com/RaviralaLathasri/CNN-Based-Classification-of-Pnemonia-Tuberculosis" target="_blank" rel="noreferrer">Repository <span>↗</span></a>
+            <details class="project-details"><summary>Details <span>+</span></summary><p>A four-layer CNN uses normalization, dropout, and augmentation on 224×224 inputs, paired with a Tkinter interface for instant confidence scoring.</p></details>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span>04</span><span>FINTECH / APPLIED AI</span></div>
+          <div class="project-card__metric"><strong>QAOA</strong><span>optimization</span></div>
+          <h3>Quantum Investment Recommendation</h3>
+          <p>A hybrid portfolio engine connecting quantum optimization with AI-powered market intelligence.</p>
+          <ul class="compact-impact"><li>QAOA portfolio allocation</li><li>Gemini sentiment intelligence</li><li>Risk profiling and backtesting</li></ul>
+          <div class="project-stack"><span>FastAPI</span><span>Qiskit</span><span>Gemini</span><span>SQLite</span></div>
+          <div class="project-actions">
+            <a class="text-link" href="https://github.com/RaviralaLathasri/Quntum-Enhancement-Investment-Recommendation-System" target="_blank" rel="noreferrer">Repository <span>↗</span></a>
+            <details class="project-details"><summary>Details <span>+</span></summary><p>The prototype combines portfolio allocation, live market inputs, narrative guidance, secure authentication, and tax-aware advisory concepts in one workflow.</p></details>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span>05</span><span>PUBLIC SAFETY / BI</span></div>
+          <div class="project-card__metric"><strong>30K+</strong><span>records</span></div>
+          <h3>India Road Accident Analytics</h3>
+          <p>A multi-page safety intelligence report built to expose high-risk corridors and causal patterns.</p>
+          <ul class="compact-impact"><li>State and district-level analysis</li><li>Weather, road, and time factors</li><li>Interactive drill-through journeys</li></ul>
+          <div class="project-stack"><span>Power BI</span><span>DAX</span><span>Power Query</span></div>
+          <div class="project-actions">
+            <a class="text-link" href="https://github.com/RaviralaLathasri/Road-Accidents-Dashboard" target="_blank" rel="noreferrer">Repository <span>↗</span></a>
+            <a class="text-link" href="https://app.powerbi.com/view?r=eyJrIjoiZTZmMDQ4ZDUtNTg1NC00NzliLWEzNTQtZDYyN2JmOGFhMGU2IiwidCI6ImRhZTA4MDk3LTgyNjAtNDk5Ni05MDY2LWZhZTExYmY3MWVhNiJ9" target="_blank" rel="noreferrer">Live report <span>↗</span></a>
+            <details class="project-details"><summary>Details <span>+</span></summary><p>Power Query integrates the source data into an interactive model that helps planning teams move from national patterns to specific high-risk locations.</p></details>
           </div>
         </article>
       </div>
     </section>
 
-    <footer class="footer">
-      <p>© 2026 Lathasri Ravirala · Hyderabad, India</p>
-      <p><a href="#top">Back to top ↑</a></p>
-    </footer>
-  </div>
-</main>
+    <section class="section section-shell" id="experience">
+      <div class="section-kicker reveal"><span>04</span> Experience &amp; impact</div>
+      <div class="experience-layout">
+        <div class="section-heading reveal">
+          <p>HOW I OPERATE</p>
+          <h2>Research rigor.<br /><em>Delivery mindset.</em></h2>
+          <p class="section-note">A body of work spanning model evaluation, analytical storytelling, and complete product workflows.</p>
+        </div>
 
-<button type="button" class="to-top" id="toTopBtn" aria-label="Back to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
+        <div class="experience-rail">
+          <article class="experience-item reveal">
+            <div class="experience-item__marker">01</div>
+            <div class="experience-item__content">
+              <div class="experience-item__top"><h3>AI &amp; Data Science Research</h3><span>MODEL EVALUATION</span></div>
+              <p>Compared Logistic Regression, Random Forest, and XGBoost for clinical risk scoring on the Heart Disease UCI dataset.</p>
+              <div class="experience-result"><strong>90.1%</strong><span>XGBoost accuracy</span><strong>0.93</strong><span>ROC-AUC</span></div>
+            </div>
+          </article>
+          <article class="experience-item reveal">
+            <div class="experience-item__marker">02</div>
+            <div class="experience-item__content">
+              <div class="experience-item__top"><h3>End-to-End Analytics Delivery</h3><span>DECISION SYSTEMS</span></div>
+              <p>Cleaned multi-source data, defined meaningful KPIs, and built interactive reports for environmental, road-safety, retail, and retention use cases.</p>
+              <ul><li>Translate raw data into decision-ready models</li><li>Design for the question a stakeholder needs answered</li><li>Communicate outcomes beyond the technical layer</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<script>
-  // ---- Resume download ----
-  const resumeText = `Lathasri Ravirala
-AI Engineer | Data Scientist | Data Analyst | Data Engineer
-Hyderabad, Telangana, India
-Email: lathasriravirala2003@gmail.com
-LinkedIn: https://linkedin.com/in/lathasri-ravirala-06b606309
-GitHub: https://github.com/RaviralaLathasri
+    <section class="education section-shell reveal" id="education">
+      <div class="education__label"><span>05</span> Education</div>
+      <div class="education__degree">
+        <span>BACHELOR OF TECHNOLOGY</span>
+        <h2>Artificial Intelligence<br />&amp; Data Science</h2>
+      </div>
+      <div class="education__meta">
+        <p>Methodist College of Engineering &amp; Technology</p>
+        <span>Hyderabad · 2022—2026</span>
+      </div>
+      <div class="education__score"><strong>8.6</strong><span>CGPA / 10</span></div>
+    </section>
 
-Summary
-AI engineer with hands-on experience in retrieval-augmented generation, quantum portfolio optimization, Power BI analytics, and medical image classification. Combines applied modeling, data engineering, and product delivery.
+    <section class="section section-shell" id="research">
+      <div class="section-kicker reveal"><span>06</span> Publications &amp; research</div>
+      <div class="section-heading section-heading--row reveal">
+        <div>
+          <p>RESEARCH RECORD</p>
+          <h2>Ideas tested,<br /><em>documented, shared.</em></h2>
+        </div>
+        <p class="section-note">Research across analytics, financial intelligence, and early disease prediction.</p>
+      </div>
 
-Selected Projects
-- RAG Chatbot with Meta LLaMA: strict no-hallucination document QA using Flask and OpenRouter.
-- Air Quality & Environmental Insights: Power BI product covering 28M+ AQI observations across India.
-- India Road Accident Analytics: Power BI report analyzing 30K+ accident records nationwide.
-- Quantum-Enhanced Investment Recommendation System: Qiskit QAOA + Gemini AI fintech prototype.
-- Pneumonia & Tuberculosis Detection: CNN achieving 92% classification accuracy on chest X-rays.
-- Mentor AI: voice-based AI interview coaching platform on FastAPI/Railway.
+      <div class="research-list">
+        <a class="research-row reveal" href="https://isjem.com/?s=Superstoreorders+dataset" target="_blank" rel="noreferrer">
+          <span class="research-row__number">01</span>
+          <div><span>ISJEM · APRIL 2025</span><h3>Visualizing Retail Trends and Performance Using Tableau</h3><p>Analyzed 51,290 transactions across five countries to surface product, market, and margin patterns.</p></div>
+          <span class="research-row__doi">DOI 10.55041/ISJEM03240</span>
+          <span class="research-row__arrow">↗</span>
+        </a>
+        <a class="research-row reveal" href="https://ijcrt.org/download1.php?file=IJCRT2604183.pdf" target="_blank" rel="noreferrer">
+          <span class="research-row__number">02</span>
+          <div><span>IJCRT · 2025</span><h3>Quantum Enhancement Investment Recommendation</h3><p>Combined QAOA, forecasting, news sentiment, and risk profiling in a hybrid advisory concept.</p></div>
+          <span class="research-row__doi">QUANTUM FINANCE</span>
+          <span class="research-row__arrow">↗</span>
+        </a>
+        <article class="research-row reveal">
+          <span class="research-row__number">03</span>
+          <div><span>SYMBIOSIS INSTITUTE OF TECHNOLOGY · 2025</span><h3>Intelligent ML Approaches for Early Disease Prediction</h3><p>Examined high-precision classification and explainability for earlier, more useful clinical prediction.</p></div>
+          <span class="research-row__doi">CONFERENCE PAPER</span>
+          <span class="research-row__arrow">—</span>
+        </article>
+      </div>
+    </section>
 
-Education
-BTech, Artificial Intelligence and Data Science
-Methodist College of Engineering & Technology, Hyderabad (2022-2026), CGPA 8.6
+    <section class="section section-shell" id="certifications">
+      <div class="section-kicker reveal"><span>07</span> Selected credentials</div>
+      <div class="credentials-grid">
+        <a class="credential reveal" href="https://www.datacamp.com/certificate/DAA0012897127415" target="_blank" rel="noreferrer"><span>DC</span><div><small>DATACAMP</small><strong>Data Analyst</strong></div><i>↗</i></a>
+        <a class="credential reveal" href="https://www.datacamp.com/certificate/DSA0016073568457" target="_blank" rel="noreferrer"><span>DC</span><div><small>DATACAMP</small><strong>Data Scientist</strong></div><i>↗</i></a>
+        <a class="credential reveal" href="https://app.manara.tech/certificate/1746862772-5A53D50E1438191D" target="_blank" rel="noreferrer"><span>MA</span><div><small>MANARA</small><strong>Data Engineer</strong></div><i>↗</i></a>
+        <a class="credential reveal" href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS69S104700190204455507" target="_blank" rel="noreferrer"><span>NP</span><div><small>NPTEL</small><strong>Python</strong></div><i>↗</i></a>
+        <a class="credential reveal" href="https://www.credly.com/badges/9f801030-dd6c-43cf-a782-0a92b71d46b5/linked_in_profile" target="_blank" rel="noreferrer"><span>IB</span><div><small>IBM · CREDLY</small><strong>Artificial Intelligence</strong></div><i>↗</i></a>
+        <div class="credential reveal"><span>IN</span><div><small>INFOSYS</small><strong>Power BI &amp; Data Viz</strong></div><i>✓</i></div>
+      </div>
+    </section>
 
-Publications
-- Visualizing Retail Trends and Performance Using Tableau, ISJEM, April 2025
-- Quantum Enhancement Investment Recommendation, IJCRT, 2025
-- Intelligent Machine Learning Approaches for Early Disease Prediction, Symbiosis Institute of Technology, 2025
+    <section class="impact-section" id="achievements">
+      <div class="section-shell">
+        <div class="section-kicker section-kicker--light reveal"><span>08</span> Evidence of execution</div>
+        <div class="impact-header reveal">
+          <h2>Proof, not<br /><em>potential.</em></h2>
+          <p>Selected numbers from research, modeling, analytics, and academic work.</p>
+        </div>
+        <div class="impact-grid">
+          <article class="impact-stat reveal"><span>01</span><strong>30K+</strong><p>road-accident records transformed into safety intelligence</p></article>
+          <article class="impact-stat reveal"><span>02</span><strong>51,290</strong><p>retail transactions studied across five countries</p></article>
+          <article class="impact-stat reveal"><span>03</span><strong>0.93</strong><p>ROC-AUC achieved in clinical risk model comparison</p></article>
+          <article class="impact-stat reveal"><span>04</span><strong>6</strong><p>professional credentials across AI, data, and analytics</p></article>
+          <article class="impact-stat reveal"><span>05</span><strong>8.6</strong><p>CGPA in Artificial Intelligence &amp; Data Science</p></article>
+        </div>
+      </div>
+    </section>
 
-Certifications
-DataCamp Data Analyst, DataCamp Data Science, Manara Data Engineer, NPTEL Python, IBM AI (Credly), Infosys Power BI & Data Visualization
+    <section class="contact section-shell" id="contact">
+      <div class="contact__orb" aria-hidden="true"></div>
+      <div class="contact__top reveal">
+        <div class="section-kicker"><span>09</span> Start a conversation</div>
+        <span class="contact__status"><i></i> Available for the right opportunity</span>
+      </div>
+      <div class="contact__body reveal">
+        <p>Have a serious problem in AI or data?</p>
+        <h2>Let’s build something<br /><em>people can trust.</em></h2>
+        <a class="contact__email" href="mailto:lathasriravirala2003@gmail.com">lathasriravirala2003@gmail.com <span>↗</span></a>
+      </div>
+      <div class="contact__footer reveal">
+        <div><span>BASED IN</span><strong>Hyderabad, India</strong></div>
+        <div><span>CONNECT</span><a href="https://linkedin.com/in/lathasri-ravirala-06b606309" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/RaviralaLathasri" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        <div><span>RESPONSE</span><strong>Usually within 24 hours</strong></div>
+        <button class="button button--secondary" id="resumeBtnFooter" type="button">Download résumé ↓</button>
+      </div>
+    </section>
+  </main>
 
-Skills
-Python, SQL, PostgreSQL, MySQL, TensorFlow, Keras, Power BI, Tableau, Git, Docker, Flask, FastAPI, Qiskit, NLP, RAG, Computer Vision, Data Visualization
-`;
-  function downloadResume(){
-    const blob = new Blob([resumeText], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'Lathasri-Ravirala-Resume.txt';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(link.href);
-  }
-  document.getElementById('resumeBtn').addEventListener('click', downloadResume);
-  document.getElementById('resumeBtn2').addEventListener('click', downloadResume);
+  <footer class="site-footer section-shell">
+    <p>© <span id="currentYear">2026</span> Lathasri Ravirala</p>
+    <p>Designed around clarity. Built for impact.</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
 
-  // ---- Project details toggle ----
-  document.querySelectorAll('.details-toggle').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-target');
-      const panel = document.getElementById(id);
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      btn.firstChild.textContent = open ? 'Read case study' : 'Hide case study';
-      panel.style.maxHeight = open ? '0px' : panel.scrollHeight + 'px';
-    });
-  });
-
-  // ---- Mobile nav ----
-  const nav = document.getElementById('siteNav');
-  const navToggle = document.getElementById('navToggle');
-  navToggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-  document.querySelectorAll('.nav__mobile a').forEach((a) => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // ---- Scroll reveal ----
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting){
-        entry.target.classList.add('in-view');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
-
-  // ---- Active nav link on scroll ----
-  const sections = document.querySelectorAll('main section[id]');
-  const navLinks = document.querySelectorAll('.nav__links a');
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const link = document.querySelector('.nav__links a[href="#' + entry.target.id + '"]');
-      if (!link) return;
-      if (entry.isIntersecting){
-        navLinks.forEach((l) => l.classList.remove('is-active'));
-        link.classList.add('is-active');
-      }
-    });
-  }, { rootMargin: '-45% 0px -45% 0px' });
-  sections.forEach((s) => navObserver.observe(s));
-
-  // ---- Back to top ----
-  const toTopBtn = document.getElementById('toTopBtn');
-  window.addEventListener('scroll', () => {
-    toTopBtn.classList.toggle('is-visible', window.scrollY > 700);
-  });
-  toTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
