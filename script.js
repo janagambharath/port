@@ -23,6 +23,10 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 860) setMenu(false);
 });
 
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setMenu(false);
+});
+
 let scrollFrame;
 function updateScrollState() {
   const scrollTop = window.scrollY;
@@ -124,21 +128,21 @@ function downloadResume() {
   URL.revokeObjectURL(url);
 }
 
-['resumeBtn', 'resumeBtnFooter'].forEach((id) => {
+['resumeBtn'].forEach((id) => {
   document.getElementById(id)?.addEventListener('click', downloadResume);
 });
 
-const systemCard = document.querySelector('.system-card');
-if (systemCard && !reducedMotion && window.matchMedia('(pointer: fine)').matches) {
-  systemCard.addEventListener('pointermove', (event) => {
-    const bounds = systemCard.getBoundingClientRect();
+const heroPanel = document.querySelector('.hero-panel');
+if (heroPanel && !reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+  heroPanel.addEventListener('pointermove', (event) => {
+    const bounds = heroPanel.getBoundingClientRect();
     const rotateX = ((event.clientY - bounds.top) / bounds.height - 0.5) * -3;
     const rotateY = ((event.clientX - bounds.left) / bounds.width - 0.5) * 4;
-    systemCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    heroPanel.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
 
-  systemCard.addEventListener('pointerleave', () => {
-    systemCard.style.transform = '';
+  heroPanel.addEventListener('pointerleave', () => {
+    heroPanel.style.transform = '';
   });
 }
 
